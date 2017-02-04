@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebMVC.COMMON;
 using WebMVC.DataAccessLayer;
 using WebMVC.ENTITIES.CrudModel;
@@ -40,6 +41,13 @@ namespace WebMVC.Areas.Admin.Controllers
                 }
             }
                 return View("Index");
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return View("Index","Home");
         }
     }
 
