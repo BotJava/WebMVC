@@ -43,6 +43,27 @@ namespace WebMVC.Areas.Admin.Controllers
                 return View("Index");
         }
 
+        [HttpPost]
+        public ActionResult Create(CrudModelLogin model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    QuanTriVien _model = new QuanTriVien();
+                    COMMON.Helpers.CopyObject<QuanTriVien>(model, ref _model);
+                    _db.Insert<QuanTriVien>(_model);
+                    _db.SaveChange();
+                    return RedirectToAction("Index", "QuanTriVien");
+                }
+                catch (Exception)
+                {
+                    ModelState.AddModelError("", "Thêm quản trị viên thất bại.");
+                }
+            }
+            return View("Index");
+        }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();

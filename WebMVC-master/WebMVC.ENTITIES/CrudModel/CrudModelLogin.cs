@@ -12,6 +12,10 @@ namespace WebMVC.ENTITIES.CrudModel
     {
         [Required(ErrorMessage = "Mời nhập tên đăng nhập")]
         public string TenDangNhap { set; get; }
+
+        [Display(Name = "Tên hiển thị")]
+        public string TenHienThi { get; set; }
+
         [Required(ErrorMessage = "Mời nhập mật khẩu")]
         public string MatKhau { set; get; }
         public bool RememberMe { get; set; }

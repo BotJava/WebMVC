@@ -1,73 +1,111 @@
-﻿@model WebMVC.ENTITIES.CrudModel.CrudModelLogin
-    @section header
+﻿
+@model WebMVC.ENTITIES.CrudModel.CrudModelLogin
+@section header
     {
-        Đăng nhập
-        }
+    Đăng nhập
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="/Assets/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- MetisMenu CSS -->
-    <link href="/Assets/admin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="/Assets/admin/dist/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="/Assets/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>Web Education | </title>
+    <!-- Bootstrap -->
+    <link href="/Assets/client/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/Assets/client/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/Assets/client/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="/Assets/client/vendors/animate.css/animate.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="/Assets/client/build/css/custom.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
-                    </div>
-                    <div class="panel-body">
-                        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
-                        {
-                            @Html.ValidationSummary(false, "", new { @class = "text-danger" });
-                            <fieldset>
+<body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" });
+                    <h1>Đăng nhập</h1>
+                            <div>
                                 <div class="form-group">
-                                    @Html.TextBoxFor(model => model.TenDangNhap, new { @class = "form-control", @autofocus = "autofocus" })
+                                    @Html.TextBoxFor(model => model.TenDangNhap, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên đăng nhập" })
                                 </div>
+                            </div>
+                            <div>
                                 <div class="form-group">
-                                    @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control", @autofocus = "autofocus" })
+                                    @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Mật khẩu" })
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        @Html.CheckBoxFor(model => model.RememberMe)Remember Me
-                                    </label>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Đăng nhập</button>
+                                @*<button type="submit" class="btn btn-default submit">Đăng nhập</button>*@
+                                <a class="reset_pass" href="#">Bạn quên mật khẩu?</a>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="separator">
+                                <p class="change_link">
+                                    Tài khoán mới?
+                                    <a href="#signup" class="to_register"> Đăng ký </a>
+                                </p>
+                                <div class="clearfix"></div>
+                                <br />
+                                <div>
+                                    <h1><i class="fa fa-paw"></i> Web Education!</h1>
+                                    <p>©2016 Create by Hide On Code</p>
                                 </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
-                            </fieldset>
-                        }
-
-                    </div>
-                </div>
+                            </div>
+                }
+            </div>
+            <div id="register" class="animate form registration_form">
+                <section class="login_content">
+                    @using (Html.BeginForm("Create", "Login", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h1>Đăng ký</h1>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.TenDangNhap, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên đăng nhập" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.TenHienThi, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên hiển thị" })
+                            @Html.ValidationMessageFor(model => model.TenHienThi, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Mật khẩu" })
+                            @*<input type="password" class="form-control" placeholder="Password" required="" />*@
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-floppy-disk"></span> Đăng ký
+                            </button>
+                            @*<a class="btn btn-default submit" href="index.html">Đăng ký</a>*@
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="separator">
+                            <p class="change_link">
+                                Đã có tài khoản ?
+                                @Html.ActionLink("Đăng nhập", "Index")
+                               
+                                @*<a href="#signin" class="to_register"> Đăng nhập </a>*@
+                            </p>
+                            <div class="clearfix"></div>
+                            <br />
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    }
+                </section>
             </div>
         </div>
     </div>
-    <!-- jQuery -->
-    <script src="/Assets/admin/vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/Assets/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/Assets/admin/vendor/metisMenu/metisMenu.min.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="/Assets/admin/dist/js/sb-admin-2.js"></script>
 </body>
 </html>

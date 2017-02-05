@@ -79,6 +79,6 @@ E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.COMMON\bin\Debug\Sy
 E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.COMMON\bin\Debug\System.Web.WebPages.xml
 E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.COMMON\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.COMMON\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.COMMON\obj\Debug\WebMVC.COMMON.csprojResolveAssemblyReference.cache
 E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.COMMON\obj\Debug\WebMVC.COMMON.dll
 E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.COMMON\obj\Debug\WebMVC.COMMON.pdb
-E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.COMMON\obj\Debug\WebMVC.COMMON.csprojResolveAssemblyReference.cache

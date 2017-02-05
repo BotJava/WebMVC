@@ -37,4 +37,3 @@ E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.DataAccessLayer\bin
 E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
 E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.DataAccessLayer\obj\Debug\WebMVC.DataAccessLayer.dll
 E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.DataAccessLayer\obj\Debug\WebMVC.DataAccessLayer.pdb
-E:\Programming\GitHub\New folder\WebMVC\WebMVC-master\WebMVC.DataAccessLayer\obj\Debug\WebMVC.DataAccessLayer.csprojResolveAssemblyReference.cache
